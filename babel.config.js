@@ -8,16 +8,10 @@ module.exports = function (api) {
         {
           root: ["./"],
           alias: {
-            "@core": "./src/core",
-            "@features": "./src/features",
-            "@shared": "./src/shared-ui",
-            "@domain": "./src/domain",
-            "@data": "./src/data"
+            "@mvvn": "./src/mvvn"
           }
         }
       ]
     ]
   };
 };
-
-

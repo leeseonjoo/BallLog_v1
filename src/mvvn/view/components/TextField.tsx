@@ -1,17 +1,21 @@
 import React from "react";
-import { TextInput, View, Text, StyleSheet, TextInputProps } from "react-native";
-import { theme } from "@core/theme";
+import { StyleSheet, Text, TextInput, TextInputProps, View } from "react-native";
+import { theme } from "@mvvn/theme/theme";
 
 type Props = TextInputProps & {
   label?: string;
   hint?: string;
 };
 
-export default function TextField({ label, hint, ...rest }: Props) {
+export default function TextField({ label, hint, style, ...rest }: Props) {
   return (
     <View style={styles.root}>
       {label ? <Text style={styles.label}>{label}</Text> : null}
-      <TextInput placeholderTextColor={theme.colors.textSecondary} style={styles.input} {...rest} />
+      <TextInput
+        placeholderTextColor={theme.colors.textMuted}
+        style={[styles.input, style]}
+        {...rest}
+      />
       {hint ? <Text style={styles.hint}>{hint}</Text> : null}
     </View>
   );
@@ -26,18 +30,16 @@ const styles = StyleSheet.create({
     fontSize: theme.typography.label.fontSize
   },
   input: {
-    backgroundColor: theme.colors.surface,
+    borderRadius: theme.radius.md,
     borderWidth: 1,
     borderColor: theme.colors.border,
+    backgroundColor: theme.colors.surface,
     color: theme.colors.textPrimary,
-    paddingVertical: theme.spacing.md,
     paddingHorizontal: theme.spacing.md,
-    borderRadius: theme.radius.md
+    paddingVertical: theme.spacing.md
   },
   hint: {
-    color: theme.colors.textSecondary,
+    color: theme.colors.textMuted,
     fontSize: theme.typography.caption.fontSize
   }
 });
-
-
