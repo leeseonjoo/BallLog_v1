@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { matchRepository } from "@data/repositories/MatchRepository";
-import { Match } from "@domain/models/match";
+import { matchRepository } from "@mvvn/data/matchRepository";
+import { Match } from "@mvvn/model/match";
 
-export function useMatchLogViewModel() {
+export function useMatchListViewModel() {
   const [items, setItems] = useState<Match[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -20,12 +20,18 @@ export function useMatchLogViewModel() {
     load();
   }, [load]);
 
-  const remove = useCallback(async (id: string) => {
-    await matchRepository.remove(id);
-    await load();
-  }, [load]);
+  const remove = useCallback(
+    async (id: string) => {
+      await matchRepository.remove(id);
+      await load();
+    },
+    [load]
+  );
 
-  return useMemo(() => ({ items, loading, reload: load, remove }), [items, loading, load, remove]);
+  return useMemo(
+    () => ({ items, loading, reload: load, remove }),
+    [items, loading, load, remove]
+  );
 }
 
 export function useMatchEditorViewModel(id?: string) {
@@ -70,5 +76,3 @@ export function useMatchEditorViewModel(id?: string) {
 
   return { draft, loading, update, save };
 }
-
-

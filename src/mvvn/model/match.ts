@@ -8,5 +8,3 @@ export type Match = {
   rating: number; // 1~10
   memo?: string;
 };
-
-

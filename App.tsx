@@ -1,8 +1,8 @@
 import React from "react";
 import { NavigationContainer, DefaultTheme, Theme } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
-import AppNavigator from "@core/navigation/AppNavigator";
-import { theme } from "@core/theme";
+import AppNavigator from "@mvvn/navigation/AppNavigator";
+import { theme } from "@mvvn/theme/theme";
 
 const navTheme: Theme = {
   ...DefaultTheme,
@@ -23,5 +23,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-

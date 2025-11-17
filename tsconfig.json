@@ -14,14 +14,8 @@
     "moduleResolution": "Bundler",
     "baseUrl": ".",
     "paths": {
-      "@core/*": ["src/core/*"],
-      "@features/*": ["src/features/*"],
-      "@shared/*": ["src/shared-ui/*"],
-      "@domain/*": ["src/domain/*"],
-      "@data/*": ["src/data/*"]
+      "@mvvn/*": ["src/mvvn/*"]
     }
   },
   "include": ["App.tsx", "src/**/*"]
 }
-
-
