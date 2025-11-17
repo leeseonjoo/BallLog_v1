@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "BallLog",
+    "slug": "balllog",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.balllog.v1"
+    },
+    "android": {},
+    "web": { "bundler": "metro" }
+  }
+}
+
+
